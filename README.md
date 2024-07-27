@@ -13,27 +13,26 @@ Use `opensource-docker` binary to spin up local environment on Linux, Mac OS X o
 Docker Engine and Docker Compose installed on your host machine.
 For further information follow the official guidelines: https://docs.docker.com/get-docker/
 
-
 ## Installation
 
 Download the binary file according to your OS.
 
 Give permissions on `opensource-docker` file and move on binary folder from a Terminal (in Linux/MacOS):
 
-```
+```bash
 chmod +x opensource-docker
 sudo mv opensource-docker /usr/local/bin/opensource-docker
 ```
 
 ## Usage
 
-```
+```bash
 ./opensource-docker <command>
 ```
 
 The `<command>` field value is one of the following listed below:
 
-```
+```bash
 EPOS Open Source CLI installer to deploy the EPOS System using docker-compose
 
 Usage:
@@ -56,7 +55,7 @@ Use "opensource-docker [command] --help" for more information about a command.
 
 ## Deploy a new environment
 
-```
+```bash
 Deploy an enviroment with .env set up on docker
 
 Usage:
@@ -75,7 +74,7 @@ Flags:
 
 ## Delete the existing environment
 
-```
+```bash
 Delete an enviroment with .env set up on docker
 
 Usage:
@@ -91,11 +90,11 @@ Flags:
 
 ## Populate the existing environment with metadata
 
-### Automatic option: 
+### Automatic option
 
 Download or create TTL files according to EPOS-DCAT-AP and use the following command:
 
-```
+```bash
 Populate the existing environment with metadata information in a specific folder
 
 Usage:
@@ -115,7 +114,7 @@ Use the API Gateway endpoint to manually ingest metadata TTL files into the cata
 
 ## Export configuration file and docker-compose
 
-```
+```bash
 Export configuration files for customization in output folder, options: [env, compose]
 
 Usage:
@@ -127,20 +126,22 @@ Flags:
       --output string   Full path utput folder
 ```
 
-
 ## Access URLs
 
-EPOS Data Portal: 
-```
+EPOS Data Portal:
+
+```bash
 http://<your-ip>:<GUI_PORT><DEPLOY_PATH>
 ```
 
-EPOS API Gateway: 
-```
+EPOS API Gateway:
+
+```bash
 http://<your-ip>:<API_PORT><DEPLOY_PATH><API_PATH>
 ```
 
 ## Environment Variables
+
 ### Base environment configuration
 
 | Name | Standard Value | Description |
@@ -163,7 +164,7 @@ http://<your-ip>:<API_PORT><DEPLOY_PATH><API_PATH>
 | BROKER_PASSWORD | changeme | RabbitMQ password |
 | BROKER_VHOST | changeme | RabbitMQ vhost |
 
-### RabbitMQ configuration
+### PostgreSQL configuration
 
 | Name | Standard Value | Description |
 |--|--|--|
@@ -219,7 +220,7 @@ http://<your-ip>:<API_PORT><DEPLOY_PATH><API_PATH>
 | REDIS_SERVER | redis-server | |
 | INGESTOR_HASH | FA9BEB99E4029AD5A6615399E7BBAE21356086B3 | "changeme" Security key|
 
-### Docker Images for Open Source 
+### Docker Images for Open Source
 
 | Variable name | Image name | Default Tag |
 |--|--|--|

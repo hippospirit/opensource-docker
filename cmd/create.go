@@ -49,6 +49,6 @@ func init() {
 	deployCmd.Flags().String("dockercompose", "", "Docker compose file, use default if not provided")
 	deployCmd.Flags().String("envname", "", "Set name of the environment")
 	deployCmd.Flags().String("envtag", "", "Set tag of the environment")
-	deployCmd.Flags().String("autoupdate", "", "Auto update the images versions (true|false)")
-	deployCmd.Flags().String("update", "", "Update of an existing deployment (true|false), default false")
+	deployCmd.Flags().String("autoupdate", "false", "Auto update the images versions (true|false), default false")
+	deployCmd.Flags().String("update", "false", "Update of an existing deployment (true|false), default false")
 }

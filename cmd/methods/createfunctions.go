@@ -43,7 +43,7 @@ func CreateEnvironment(env string, dockercomposefile string, externalip string, 
 		dockercommand = "docker-compose"
 		composecommand = ""
 	}
-	if update != "true" && update != "false" {
+	if update != "true" {
 		update = "false"
 	}
 	fmt.Println(string(out))
@@ -73,14 +73,12 @@ func CreateEnvironment(env string, dockercomposefile string, externalip string, 
 		return err
 	}
 
-	isDefaultEnv := false
 	if env == "" {
 		ret_env, err := GenerateTempFile(dname, "configurations", GetConfigurationsEmbed())
 		if err != nil {
 			return err
 		}
 		env = ret_env
-		isDefaultEnv = true
 	}
 
 	if dockercomposefile == "" {
@@ -96,7 +94,7 @@ func CreateEnvironment(env string, dockercomposefile string, externalip string, 
 		return err
 	}
 
-	if autoupdate == "true" || isDefaultEnv {
+	if autoupdate == "true" {
 		if err := CheckImagesUpdate(); err != nil {
 			PrintError("Error on updating the docker container images " + err.Error())
 			return err
